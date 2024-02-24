@@ -1,6 +1,10 @@
 using L01_2021_MS_651_2021_HL_650.Models;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.SqlServer;
 
+
+
+// Add services to the container.
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.

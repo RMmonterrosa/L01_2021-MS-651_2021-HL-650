@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using L01_2021_MS_651_2021_HL_650.Models;
 using Microsoft.EntityFrameworkCore;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace L01_2021_MS_651_2021_HL_650.Controllers
 {
@@ -20,39 +21,24 @@ namespace L01_2021_MS_651_2021_HL_650.Controllers
         }
 
         [HttpGet]
-        [Route("Get")]
-        public IActionResult Get() 
-        {
-            
-            List<Pedidos> listadeprueba = (from d in _pruebaContext.Datos
-                                          select d).ToList();
-
-            if(listadeprueba.Count() == 0) 
-            {
-                return NotFound();
-            }
-
-            return Ok(listadeprueba);
-        
-        }
-
-        [HttpGet]
         [Route("GetId/{id}")]
-        public IActionResult Buscar(string id)
+        public IActionResult Buscar(int id)
         {
 
-            Datos? listadeprueba = (from d in _pruebaContext.Datos
-                                         where d.id_hola == id
-                                         select d).FirstOrDefault();
+            Pedidos? listaPedidos = (from p in _pruebaContext.pedidos
+                                    where p.clienteId == id
+                                    select p).FirstOrDefault();
 
-            if (listadeprueba == null)
+            if (listaPedidos == null)
             {
                 return NotFound();
             }
 
-            return Ok(listadeprueba);
+            return Ok(listaPedidos);
 
         }
+
+
 
     }
 

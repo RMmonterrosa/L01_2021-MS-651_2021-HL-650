@@ -1,5 +1,4 @@
-﻿using L01_2021_MS_651_2021_HL_650.Models;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.SqlServer;
 
 namespace L01_2021_MS_651_2021_HL_650.Models
@@ -13,7 +12,7 @@ namespace L01_2021_MS_651_2021_HL_650.Models
 
         public DbSet<Pedidos> pedidos {  get; set; }
 
-        public DbSet<Platos> platos { get; set; }
+        
 
 
     }
