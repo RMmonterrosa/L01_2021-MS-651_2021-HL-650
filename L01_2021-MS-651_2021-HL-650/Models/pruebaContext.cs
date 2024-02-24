@@ -2,7 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.SqlServer;
 
-namespace Def.Models
+namespace L01_2021_MS_651_2021_HL_650.Models
 {
     public class pruebaContext : DbContext
     {
@@ -11,8 +11,10 @@ namespace Def.Models
         {
         }
 
-        public DbSet<Pedidios> pedidos {  get; set; } 
-        public DbSet<Summer> Summero { get; set; } 
+        public DbSet<Pedidos> pedidos {  get; set; }
+
+        public DbSet<Platos> platos { get; set; }
+
 
     }
 }
