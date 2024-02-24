@@ -15,7 +15,6 @@ namespace L01_2021_MS_651_2021_HL_650.Models
         public DbSet<platos> platos { get; set; }
         public DbSet<motoristas> motoristas { get; set;}
 
-        public DbSet<platos> platos { get; set; }
 
 
 
