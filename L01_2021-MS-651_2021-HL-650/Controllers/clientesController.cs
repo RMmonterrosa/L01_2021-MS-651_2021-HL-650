@@ -109,5 +109,23 @@ namespace L01_2021_MS_651_2021_HL_650.Controllers
             return Ok(listaClientes);
 
         }
+
+        [HttpGet]
+        [Route("GetDireccion/{direccion}")]
+        public IActionResult BuscarDireccion(string direccion)
+        {
+
+            clientes? listaClientes = (from pl in _pruebaContext.clientes
+                                   where pl.direccion == direccion
+                                   select pl).FirstOrDefault();
+
+            if (listaClientes == null)
+            {
+                return NotFound();
+            }
+
+            return Ok(listaClientes);
+
+        }
     }
 }
