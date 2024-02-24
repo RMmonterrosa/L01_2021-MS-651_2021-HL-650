@@ -25,8 +25,8 @@ namespace L01_2021_MS_651_2021_HL_650.Controllers
         public IActionResult Get()
         {
 
-            List<Pedidos> listaPedidos = (from s in _pruebaContext.pedidos
-                                          select s).ToList();
+            List<Pedidos> listaPedidos = (from p in _pruebaContext.pedidos
+                                          select p).ToList();
 
             if (listaPedidos.Count() == 0)
             {
